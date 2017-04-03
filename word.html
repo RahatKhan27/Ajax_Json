@@ -1,0 +1,92 @@
+
+
+</div><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">  
+    <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <title>Ajax Json</title>
+
+  
+
+    
+  
+  </head>
+  <body>
+  <section id="top-menu">
+    <nav class="navbar navbar-default">
+  <div class="container">
+   
+    <div class="navbar-header">
+      
+      <a class="navbar-brand" href="#"><span>R</span>ahat</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Weather Box</a></li>
+        <li><a href="date.html">Date Picker</a></li>
+        <li><a href="password.html">Password Checker</a></li>
+        <li><a href="word.html">Word Counter</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+   <div class="container">
+    <div class="api">
+        <textarea rows="7" cols="100" class="form-control"></textarea>
+  <br>
+    <span class="sp"></span>
+    </div>
+  </div>
+  </section>
+
+ 
+
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+     <script src="jquery-ui.js"></script>
+   
+ <script>
+      
+      $(function(){
+ 
+         
+        var Txt_remain=100;
+         $(".sp").html(Txt_remain + "<b> character remaining </b>");
+ 
+         $("textarea").keyup(function(){
+            var Length=$("textarea").val().length;
+            var Remain=Txt_remain - Length;
+            $(".sp").html(Remain + "<b> character remaining </b>");
+            if (Length >=101) {
+              $(".sp").html("<b> you can't type anything </b>");
+              $(".sp").css("color","red");
+              $("textarea").attr('readonly', 'true');
+               
+            }
+         })
+ 
+      
+        })
+       
+          
+ 
+    </script>
+
+
+   
+  </body>
+</html>
